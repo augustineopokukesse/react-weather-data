@@ -17,3 +17,35 @@ export const fetchWeatherAction = createAsyncThunk(
         }
     }
 );
+
+//slice
+const weatherSlice = createSlice({
+    name: "weather",
+    initialState: {
+        weather: {},
+        loading: false,
+        error: undefined
+    },
+    extraReducers: builder => {
+        //pending
+        builder.addCase(fetchWeatherAction.pending, (state, action) => {
+            state.loading = true;
+        });
+        //fulfilled
+        builder.addCase(fetchWeatherAction.fulfilled, (state, action) => {
+            state.weather = action.payload;//returned data
+            state.loading = false;
+            state.error = undefined;
+        });
+        //rejected
+        builder.addCase(fetchWeatherAction.rejected, (state, action) => {
+            state.loading = false;
+            state.weather = undefined;
+            state.error = action.payload;
+        });
+    },
+});
+
+export const selectState = (state) => state.weather;
+
+export default weatherSlice.reducer;
