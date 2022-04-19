@@ -33,7 +33,7 @@ export const InputWrapper = styled.input`
 export const TitleWrapper = styled.h1`  
   font-size: 60px;
   text-align: center;
-  color: white;
+  color: gray;
 `;
 
 export const TextWrapper = styled.h2`

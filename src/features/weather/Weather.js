@@ -60,12 +60,10 @@ function Weather() {
               value={city}
               onChange={e => setCity(e.target.value)}
               placeholder="Search City"
-              class="relative z-10 inline-block w-full md:w-auto mb-2  px-3 py-2 mr-4  font-medium leading-normal bg-transparent border-2 rounded-lg text-green-400 "
             />
             {/* Button */}
             <InputWrapper
               type="submit" value="Search"
-              className="inline-flex items-center px-3 pr-3 28 text-center py-3 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             />
           </form>  
           
@@ -81,7 +79,7 @@ function Weather() {
             <TitleWrapper>
               {error?.message}
             </TitleWrapper>)
-          : (
+          : (Object.keys(weather).length === 0) ? "" :(
             <DataWrapper>
               <div class="flex flex-wrap -mx-4 justify-center">
                 <div class="w-full md:w-1/3 px-4">
@@ -89,43 +87,31 @@ function Weather() {
                     <div class="flex justify-start  items-center">
                       <span class="flex items-center justify-center w-16 h-16 rounded-full border-2">
                         {/* weather logo */}
-                        {/* <img
+                        <img
                           class="w-56 "
                           src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
                           alt="/"
-                        /> */}
+                        />
                       </span>
                       <h1 class="text-gray-300 pl-5">
-                        {/* {weather.weather[0].main} */}
+                        {weather.weather[0].main}
                       </h1>{" "}
                     </div>
                     <h1 class="text-gray-300 text-center text-4xl mb-10">
-                      {/* {Math.ceil(Number(weather.main.temp))}{" "} */}
+                      {Math.ceil(Number((weather.main.temp)- 273.15))}{" "}
                       <span class="text-yellow-500 text-4xl">°C</span>
                     </h1>
                     <h3 class="mb-6 text-xl text-white font-semibold">
-                      {/* {weather.name}, {weather.sys?.country} */}
+                      {weather.name}, {weather.sys?.country}
                     </h3>
-                    {/* <p class="mb-8 text-gray-300">
+                    <p class="mb-8 text-gray-300">
                       The weather condition in {weather.name},{" "}
                         {weather.sys?.country} is described as :{" "}
                         {weather.weather[0].description} with a temperature of{" "}
-                        {Math.ceil(Number(weather.main.temp))} °C and a humidity of{" "}
+                        {Math.ceil(Number((weather.main.temp)- 273.15))} °C and a humidity of{" "}
                         {weather.main?.humidity} %
-                    </p> */}
-                    <a
-                      class="ml-auto flex items-center justify-center w-20 h-20 rounded-full  hover:bg-blue-700 text-white"
-                      href="#"
-                    >
-                      <span class="flex items-center justify-center w-16 h-16 rounded-full border-2">
-                        {/* weather logo */}
-                        <img
-                          class="w-56 "
-                          // src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
-                          alt="/"
-                        />
-                      </span>
-                    </a>
+                    </p>
+                    
                   </div>
                 </div>
               </div>
