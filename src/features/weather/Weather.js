@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import weatherSVG from "../../img/weather.svg";
+// import weatherSVG from "../../img/weather.svg";
+import weatherICON1 from "../../img/weather-icon1.svg";
 import { fetchWeatherAction, selectState } from './weatherSlice';
 import { DataWrapper, 
         TitleWrapper, 
@@ -39,7 +40,7 @@ function Weather() {
       <ContainerWrapper>
         <ImageWrapper
           class="w-56 lg:block lg:absolute top-0 left-0 pt-10"
-          src={weatherSVG}
+          src={weatherICON1}
           alt="/"
         />
 
@@ -49,7 +50,7 @@ function Weather() {
             Weather App
           </TitleWrapper>
           <TextWrapper>
-            Find out the current weather situation around the world
+            Get the current weather situation around the world
           </TextWrapper>
           {/* Input */}
           
