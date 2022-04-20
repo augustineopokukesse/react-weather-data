@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 // import weatherSVG from "../../img/weather.svg";
+import CountryCity from "../../data/all-countries-cities-object.json";
 import weatherICON1 from "../../img/weather-icon1.svg";
 import { fetchWeatherAction, selectState } from './weatherSlice';
 import { DataWrapper, TitleWrapper, ImageWrapper, TextWrapper,
@@ -9,9 +10,24 @@ import { DataWrapper, TitleWrapper, ImageWrapper, TextWrapper,
         TempWrapper, BeforeData, SubContainer, DescriptionText } from "../../styles";
 
 function Weather() {
-  const [city, setCity] = useState("chicago");
-  //dispatch action
-  const dispatch = useDispatch();  
+  const [country, setCountry] = useState("");
+  // const [countryid, setCountryid]= useState('');
+  const [city, setCity]= useState("");
+
+  const dispatch = useDispatch();
+  // console.log(CountryCity);
+
+  useEffect(() => {
+    setCity("");
+  },[country]);
+  
+  // Select countries
+  const countryObject = {
+    Ghana: CountryCity.Ghana,
+    Germany: CountryCity.Germany,
+    Rwanda: CountryCity.Rwanda
+  }
+  //console.log(countryObject);
 
   //select state from store
     //const selectState = useSelector(state => state.weather);
@@ -24,10 +40,17 @@ function Weather() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    if (city.length === 0) {
+    if (city.length === 0 && country.length === 0) {
       return;
+    };
+    if (city.length === 0 && country.length !== 0) {
+      dispatch(fetchWeatherAction(country));
+    };
+    if (city.length !== 0 && country.length !== 0) {
+      dispatch(fetchWeatherAction(city));
     }
-    dispatch(fetchWeatherAction(city));
+    
+    // dispatch(fetchWeatherAction(city));
     console.log("search works fine")
   };
 
@@ -51,12 +74,24 @@ function Weather() {
           {/* Input */}
           
           <form onSubmit={handleSearch}>
-            <InputWrapper
-              type="text" 
-              value={city}
-              onChange={e => setCity(e.target.value)}
-              placeholder="Search City"
-            />
+          <select onChange={e => setCountry(e.target.value)}>
+            <option value="" onSelect={e => setCountry(e.target.value)}>--Select Country--</option>
+            {Object.keys(countryObject).map(countryName => {
+              return <option>{countryName}</option>
+            })}  
+            
+            {/* <option>Ghana</option> 
+            <option>Germany</option> 
+            <option>Rwanda</option>  */}
+          </select>
+          <select value={city} onChange={e => setCity(e.target.value)}>
+            <option value="" onSelect={e => setCity(e.target.value)}>--Select City--</option>  
+            {!country ? "" : (
+              countryObject[country].map(cityName => {
+                return <option>{cityName}</option>
+              })
+            )}
+          </select>
             {/* Button */}
             <InputWrapper
               type="submit" value="Search"
