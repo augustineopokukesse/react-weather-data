@@ -24,7 +24,7 @@ export const DataWrapper = styled.div`
   height: 300px;
   background: #f0f8ff;
   border-radius: 15px;
-  border: 5px solid #808080;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   
 `;
 
@@ -84,12 +84,15 @@ export const IconWrapper = styled.img`
   width: 120px;
   top: -20px;
   left: 80px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+  background: #C2C2CB;
 `;
 
 export const DescriptionText = styled.p`
   font-size: 16px;
   color: black;
   position: relative;
-  top: -45px;
+  top: -40px;
   padding: 0 10px;
 `;
