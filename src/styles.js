@@ -40,8 +40,6 @@ export const ContainerWrapper = styled.section`
 //   text-align: center;
 `;
 
-
-
 export const InputWrapper = styled.input`  
   height: 20px;
   border-radius: 10px;
@@ -69,21 +67,21 @@ export const TempWrapper = styled.h2`
   font-size: 20px;
   color: gray;
   position: relative;
-  padding-left: 20px; 
+  padding-left: 0px; 
 `;
 export const CondWrapper = styled.h2`
   font-size: 20px;
   color: gray;
   position: relative;
   top: -10px;
-  padding-left: 20px;
+  padding-left: 0px;
 `;
 
 export const IconWrapper = styled.img`
   position: relative;
   width: 120px;
   top: -20px;
-  left: 80px;
+  left: 0px;
   border-radius: 50%;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
   background: #C2C2CB;

@@ -1,0 +1,84 @@
+$main-color: #4dd6b6;
+
+.main-login {
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+    background: linear-gradient(to right, rgb(207, 207, 207) 50%, $main-color 50%);
+    align-items: center;
+    .login-container {
+        height: 75vh;
+        width: 70%;
+        background: linear-gradient(to right bottom, rgba(236,236,236,0.7), rgba(236,236,236,0.4));
+        border-radius: 1rem;
+        margin: 2rem auto;
+        box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .link{text-decoration: none;
+            color:$main-color;
+            transition: all 0.3s ease;
+            &:hover{
+                transform: translateY(-5px);
+                color:gray;
+            }
+           
+        }
+        
+        .login-form {
+            margin: auto;
+            box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
+            height: 80%;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            input{
+                display: block;
+                border: none;
+                height: 2rem;
+                width: 70%;
+                margin: auto;
+                margin-bottom: 1.5rem;
+                padding: 0.2rem 1rem;
+                color: gray;
+                font-size: small;
+                transition: all 0.1s ease-in-out;
+                &:focus{
+                    outline: none;
+                    border: none;
+                }
+                &:hover{
+                    outline: 0.5px solid $main-color;
+                    box-shadow: 2px 2px 9px -2px $main-color;
+                }
+            }
+
+            label{
+                display: block;
+                text-align: left;
+                width:78%;    
+                margin: auto;
+                font-size: small;
+                color:gray;
+                margin-bottom: 0.5rem;
+
+            }
+
+            #submitButton {
+                width: 80%;
+                background: $main-color;
+                color:white;
+                border:none;
+                cursor: pointer;
+                padding:0.5rem 1rem;
+                transition: all 0.2s ease;
+                &:hover{
+                    box-shadow: 4px 3px 9px -1px gray;
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    }
+}
