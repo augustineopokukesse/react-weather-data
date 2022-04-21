@@ -1,0 +1,44 @@
+$main-color: #00BFFF;
+
+.weatherHead {
+    height: 45vh;
+    width: 80%;
+    background: linear-gradient(to right bottom, $main-color, rgba(236,236,236,0.4));
+    border-radius: 1rem;
+    margin: 2rem auto;
+    box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
+    display: block;
+    justify-content: center;
+    align-items: center;
+    select{
+        height: 2rem;
+        width: 30%;
+        margin-right: 10px;
+        margin-top: 1.5rem;
+        padding: 0.2rem 1rem;
+        color: gray;
+        font-size: small;
+        transition: all 0.1s ease-in-out;
+        &:focus{
+            outline: none;
+            border: none;
+        }
+        &:hover{
+            outline: 0.5px solid $main-color;
+            box-shadow: 2px 2px 9px -2px $main-color;
+            }
+    }
+    #subsearch {
+        width: 10%;
+        background: $main-color;
+        color:white;
+        border:none;
+        cursor: pointer;
+        padding:0.5rem 1rem;
+        transition: all 0.2s ease;
+        &:hover{
+            box-shadow: 4px 3px 9px -1px gray;
+            transform: translateY(-0.5px);
+        }
+    }
+}

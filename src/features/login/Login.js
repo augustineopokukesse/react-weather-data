@@ -11,7 +11,7 @@ function Login() {
     }
     return (
         <div className="main-login">
-          <h1>React Weather App: Sign in</h1>
+          <h1>Welcome! Please login</h1>
           <div className="login-container">
             <div className="login-form">
               <form onSubmit={handleSubmit}>

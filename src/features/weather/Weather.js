@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import './Weather.scss';
 import { useSelector, useDispatch } from 'react-redux';
 // import weatherSVG from "../../img/weather.svg";
 import CountryCity from "../../data/all-countries-cities-object.json";
-import weatherICON1 from "../../img/weather-icon1.svg";
+//import weatherICON1 from "../../img/weather-icon1.svg";
 import { fetchWeatherAction, selectState } from './weatherSlice';
-import { DataWrapper, TitleWrapper, ImageWrapper, TextWrapper,
-        HeaderWrapper, InputWrapper, MainWrapper,
+import { DataWrapper, TitleWrapper, TextWrapper, MainWrapper,
         ContainerWrapper, IconWrapper, CondWrapper,
         TempWrapper, BeforeData, SubContainer, DescriptionText } from "../../styles";
 
@@ -57,13 +57,13 @@ function Weather() {
   return (
     <div>
       <ContainerWrapper>
-        <ImageWrapper
+        {/* <ImageWrapper
           class="w-56 lg:block lg:absolute top-0 left-0 pt-10"
           src={weatherICON1}
           alt="/"
-        />
+        /> */}
 
-        <HeaderWrapper>
+        <div className='weatherHead'>
           
           <TitleWrapper>
             Weather App
@@ -93,13 +93,13 @@ function Weather() {
             )}
           </select>
             {/* Button */}
-            <InputWrapper
-              type="submit" value="Search"
-            />
+            <button type="submit" id="subsearch">
+              Search
+            </button>
           </form>  
           
           
-        </HeaderWrapper>
+        </div>
         {/* Content goes here */}
         <MainWrapper>
           {loading ? (
