@@ -4,6 +4,9 @@ import './Signup.scss';
 
 function Signup() {
 
+    const handleSubmit = e => {
+        e.preventDefault();
+    }
 
     return (
         <div className="main-signup">
@@ -17,7 +20,7 @@ function Signup() {
             <div className="content-body">
                 <div className="signup-section">
                     <h1>Create Account!</h1>
-                    <form >
+                    <form onSubmit={handleSubmit}>
                         <div className="input-group">
                             <h5> First Name</h5>
                             <input type="text" name="Fname"  id="fname" />
@@ -38,7 +41,7 @@ function Signup() {
                             <h5> Confirm Password</h5>
                             <input type="password"  id="pwd2" />
                         </div>
-                            <input type="submit" id='sbtn' value="Submit" />
+                            <input type="submit" id='subtn' value="Submit" />
                     </form>
                 </div>
             </div>

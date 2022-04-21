@@ -59,8 +59,19 @@ $secondry-color:#26343D;
                                
                             }
                         }
-                      
+                    }  
                     
+                }
+                #subtn{
+                    width:63%;
+                    background:$secondry-color ;
+                    color: white;
+                    cursor: pointer;
+                    border: none;
+                    padding:0.5rem 2.5rem;
+                    transition: all 0.3s ease-in-out;
+                    &:hover{
+                    box-shadow: 0.5rem 0.5rem 1rem 0.1rem gray;
                 }
             }
         }    
