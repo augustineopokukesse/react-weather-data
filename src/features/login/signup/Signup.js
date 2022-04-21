@@ -33,7 +33,7 @@ function Signup() {
                         </div>
                         <div className="input-group">
                             <h5> Last Name</h5>
-                            <input type="text" name="lname"  id="lname" value={lastname}
+                            <input type="text" name="lname" id="lname" value={lastname}
                             onChange={e => setLastname(e.target.value)}/>
                         </div>
                         <div className="input-group">
@@ -43,7 +43,7 @@ function Signup() {
                         </div>
                         <div className="input-group">
                             <h5> Password</h5>
-                            <input type="password"   name="pwd" id="pwd1" value={pwd1}
+                            <input type="password" name="pwd" id="pwd1" value={pwd1}
                             onChange={e => setPwd1(e.target.value)}/>
                         </div>
                         <div className="input-group">

@@ -22,7 +22,8 @@ $secondry-color:#26343D;
             }
         }
         .content-body{
-            position: relative;
+            position: absolute;
+            top: 7%;
             height: 100%;
             width:100%;
             .signup-section{
@@ -30,7 +31,7 @@ $secondry-color:#26343D;
                 width: 50%;
                 margin:2rem auto;
                 padding-top:1rem;
-                box-shadow: 0rem 0rem 1rem 0.1rem #48ea98;
+                box-shadow: 0rem 0rem 0.5rem 0.1rem #48ea98;
                 border-radius: 0.5rem;
                 .input-group{
                     width: 100%;
@@ -43,11 +44,12 @@ $secondry-color:#26343D;
                             left:20%;
                             top:0;
                             margin:0.5rem auto;
-                            background: white;
+                            background: rgb(249, 250, 250);
 
 
                         }
                         input{
+                            background: rgb(249, 250, 250);
                             margin:1.2rem auto;
                             width:60%;
                             border:none;

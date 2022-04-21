@@ -17,7 +17,6 @@ function App() {
             </Route>
             <Route exact path='/signup'>
               <Signup />
-              <Link to='/'>Back to Login</Link>
             </Route>
             <Route path='/weather'>
               <Weather />
