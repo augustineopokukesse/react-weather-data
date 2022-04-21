@@ -1,11 +1,36 @@
 import React from "react";
 import './Signup.scss';
-//import { Link } from "react-router-dom";
+ import { Link } from "react-router-dom";
 
 function Signup() {
+
+
     return (
-        <div>
-          <h1>Signup Page</h1>        
+        <div className="main-signup">
+          <h1>Welcome! Please Sign up</h1>
+          <div className="Signup-container">
+            <div className="login-form">
+              {/* <form onSubmit={handleSubmit}>
+                <label for="email1">Email</label>  
+                <input placeholder="Enter your email" type="email" id="email1" value={email}
+                    onChange={(e)=> setEmail(e.target.value)}/>
+                <label for="pwd1">Password</label>
+                <input placeholder="Enter your password" type="password" id="pwd1" value={password}
+                    onChange={(e)=> setPassword(e.target.value)}/>
+                <button type="submit" id="submitButton">Submit</button>
+              </form>     */}
+
+              {/* <div className="signup-link">
+                <h4>Don't have an Account ? <Link className='link' to='/signup'>Sign Up now</Link></h4>
+              </div> */}
+            </div>
+          </div>  
+          <Link to={'/weather'}>
+            <button>
+                Weather Page
+            </button>
+          </Link>
+          
 
         </div>
     )
