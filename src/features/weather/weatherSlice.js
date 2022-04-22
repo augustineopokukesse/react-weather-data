@@ -48,6 +48,6 @@ const weatherSlice = createSlice({
     },
 });
 
-export const selectState = (state) => state.weather;
+export const selectWeatherState = (state) => state.weather;
 
 export default weatherSlice.reducer;

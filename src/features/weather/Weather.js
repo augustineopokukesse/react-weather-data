@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 // import weatherSVG from "../../img/weather.svg";
 import CountryCity from "../../data/all-countries-cities-object.json";
 //import weatherICON1 from "../../img/weather-icon1.svg";
-import { fetchWeatherAction, selectState } from './weatherSlice';
+import { fetchWeatherAction, selectWeatherState } from './weatherSlice';
 import { DataWrapper, TitleWrapper, TextWrapper, MainWrapper,
         ContainerWrapper, IconWrapper, CondWrapper,
         TempWrapper, BeforeData, SubContainer, DescriptionText } from "../../styles";
@@ -32,7 +32,7 @@ function Weather() {
   //select state from store
     //const selectState = useSelector(state => state.weather);
     //console.log(selectState); 
-  const { weather, loading, error } = useSelector(selectState);
+  const { weather, loading, error } = useSelector(selectWeatherState);
   console.log(weather);
   console.log(loading);
   console.log(error);

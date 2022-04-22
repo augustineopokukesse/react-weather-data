@@ -1,10 +1,10 @@
 import React, {useState} from "react";
-import './Signup.scss';
- import { Link } from "react-router-dom";
+import './resetPwd.scss';
+import { Link } from "react-router-dom";
 
-function Signup() {
-    const [firstname, setFirstname] = useState('');
-    const [lastname, setLastname] = useState('');
+function ResetPwd() {
+    // const [firstname, setFirstname] = useState('');
+    // const [lastname, setLastname] = useState('');
     const [email, setEmail] = useState('');
     const [pwd1, setPwd1] = useState('');
     const [pwd2, setPwd2] = useState('');
@@ -18,15 +18,15 @@ function Signup() {
           {/* <h1>Welcome! Please Sign </h1> */}
           
             <div className="top">
-                <p>Already have an Account?
+                <p>Go back to
                     <Link id='Links-signin' to='/'>Sign In</Link>   
                 </p> 
             </div>
             <div className="content-body">
                 <div className="signup-section">
-                    <h1>Create Account!</h1>
+                    <h1>Reset Password</h1>
                     <form onSubmit={handleSubmit}>
-                        <div className="input-group">
+                        {/* <div className="input-group">
                             <h5> First Name</h5>
                             <input type="text" name="Fname"  id="fname" value={firstname}
                             onChange={e => setFirstname(e.target.value)}/>
@@ -35,19 +35,19 @@ function Signup() {
                             <h5> Last Name</h5>
                             <input type="text" name="lname" id="lname" value={lastname}
                             onChange={e => setLastname(e.target.value)}/>
-                        </div>
+                        </div> */}
                         <div className="input-group">
                             <h5> Email</h5>
                             <input type="Email" name="email"  id="email1" value={email}
                             onChange={e => setEmail(e.target.value)}/>
                         </div>
                         <div className="input-group">
-                            <h5> Password</h5>
+                            <h5> New Password</h5>
                             <input type="password" name="pwd" id="pwd1" value={pwd1}
                             onChange={e => setPwd1(e.target.value)}/>
                         </div>
                         <div className="input-group">
-                            <h5> Confirm Password</h5>
+                            <h5> Confirm  New Password</h5>
                             <input type="password"  id="pwd2" value={pwd2}
                             onChange={e => setPwd2(e.target.value)}/>
                         </div>
@@ -63,4 +63,4 @@ function Signup() {
     )
 }
 
-export default Signup;
+export default ResetPwd;

@@ -1,3 +1,20 @@
 .App {
   text-align: center;
 }
+
+#log-out {
+  width: 80%;
+  background: #00BFFF;
+  color:white;
+  border:none;
+  cursor: pointer;
+  padding:0.5rem 1rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+#logout:hover{
+  box-shadow: 4px 3px 9px -1px gray;
+  transform: translateY(-5px);
+}

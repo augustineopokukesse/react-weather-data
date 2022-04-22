@@ -1,13 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import './Login.scss';
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "./userSlice";
+import { useHistory } from "react-router-dom"
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const dispatch = useDispatch();
+    const history = useHistory();
+
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (!email || !email.includes("@") || !password) {
+            return;
+        } 
+        history.push('/weather');
+        dispatch(login({
+            email: email,
+            password: password,
+            loggedIn: true
+        }));
+
+        
     }
     return (
         <div className="main-login">
@@ -25,15 +43,15 @@ function Login() {
               </form>    
 
               <div className="signup-link">
-                <h4>Don't have an Account ? <Link className='link' to='/signup'>Sign Up now</Link></h4>
+                <h4>Forgotten Password ? <Link className='link' to='/resetpwd'>Reset Now</Link></h4>
               </div>
             </div>
           </div>  
-          <Link to={'/weather'}>
+          {/* <Link to={'/weather'}>
             <button>
                 Weather Page
             </button>
-          </Link>
+          </Link> */}
           
 
         </div>

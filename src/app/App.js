@@ -1,7 +1,7 @@
 import React from 'react';
 import Weather from '../features/weather/Weather';
 import Login from '../features/login/Login';
-import Signup from '../features/login/signup/Signup';
+import ResetPwd from '../features/login/resetPwd/ResetPwd';
 import '../App.css'; 
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
@@ -15,12 +15,12 @@ function App() {
             <Route exact path='/'>
               <Login />
             </Route>
-            <Route exact path='/signup'>
-              <Signup />
+            <Route exact path='/resetpwd'>
+              <ResetPwd />
             </Route>
             <Route path='/weather'>
               <Weather />
-              <Link to='/'>Log out</Link>
+              <Link id='log-out' to='/'>Log out</Link>
             </Route>
           </Switch>
         </Router>
