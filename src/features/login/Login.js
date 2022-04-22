@@ -13,9 +13,7 @@ function Login() {
     const dispatch = useDispatch();
     const history = useHistory();
     const userData = useSelector(selectUser);
-    console.log(userData);
 
-    console.log(userData[1].email);
     let emailData = [];
     let pwData = [];
 
@@ -23,8 +21,6 @@ function Login() {
       emailData = [...emailData, userData[data].email];
       pwData = [...pwData, userData[data].password];
     }
-    console.log(emailData);
-    console.log(userData[1]);
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -47,11 +43,10 @@ function Login() {
           password: password
           }));
         }
-          // console.log(data)
+         
         
         setEmail("");
-        setPassword("");
-        // console.log(userData);  
+        setPassword(""); 
     }
     return (
         <div className="main-login">
@@ -72,13 +67,7 @@ function Login() {
                 <h4>Forgotten Password ? <Link className='link' to='/resetpwd'>Reset Now</Link></h4>
               </div>
             </div>
-          </div>  
-          {/* <Link to={'/weather'}>
-            <button>
-                Weather Page
-            </button>
-          </Link> */}
-          
+          </div>          
 
         </div>
     )

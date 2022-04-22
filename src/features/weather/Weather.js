@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Weather.scss';
 import { useSelector, useDispatch } from 'react-redux';
-// import weatherSVG from "../../img/weather.svg";
 import CountryCity from "../../data/all-countries-cities-object.json";
-//import weatherICON1 from "../../img/weather-icon1.svg";
 import { fetchWeatherAction, selectWeatherState } from './weatherSlice';
 import { DataWrapper, TitleWrapper, TextWrapper, MainWrapper,
         ContainerWrapper, IconWrapper, CondWrapper,
@@ -11,11 +9,9 @@ import { DataWrapper, TitleWrapper, TextWrapper, MainWrapper,
 
 function Weather() {
   const [country, setCountry] = useState("");
-  // const [countryid, setCountryid]= useState('');
   const [city, setCity]= useState("");
 
   const dispatch = useDispatch();
-  // console.log(CountryCity);
 
   useEffect(() => {
     setCity("");
@@ -26,12 +22,9 @@ function Weather() {
     Ghana: CountryCity.Ghana,
     Germany: CountryCity.Germany,
     Rwanda: CountryCity.Rwanda
-  }
-  //console.log(countryObject);
+  };
 
   //select state from store
-    //const selectState = useSelector(state => state.weather);
-    //console.log(selectState); 
   const { weather, loading, error } = useSelector(selectWeatherState);
   console.log(weather);
   console.log(loading);
@@ -49,22 +42,12 @@ function Weather() {
     if (city.length !== 0 && country.length !== 0) {
       dispatch(fetchWeatherAction(city));
     }
-    
-    // dispatch(fetchWeatherAction(city));
-    console.log("search works fine")
   };
 
   return (
     <div>
       <ContainerWrapper>
-        {/* <ImageWrapper
-          class="w-56 lg:block lg:absolute top-0 left-0 pt-10"
-          src={weatherICON1}
-          alt="/"
-        /> */}
-
         <div className='weatherHead'>
-          
           <TitleWrapper>
             Weather App
           </TitleWrapper>
@@ -79,10 +62,6 @@ function Weather() {
             {Object.keys(countryObject).map(countryName => {
               return <option>{countryName}</option>
             })}  
-            
-            {/* <option>Ghana</option> 
-            <option>Germany</option> 
-            <option>Rwanda</option>  */}
           </select>
           <select value={city} onChange={e => setCity(e.target.value)}>
             <option value="" onSelect={e => setCity(e.target.value)}>--Select City--</option>  
@@ -97,8 +76,6 @@ function Weather() {
               Search
             </button>
           </form>  
-          
-          
         </div>
         {/* Content goes here */}
         <MainWrapper>
