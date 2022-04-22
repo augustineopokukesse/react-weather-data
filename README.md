@@ -16,7 +16,7 @@ The App consists of a
 Run `npm start` in the project root and the app will be available on port 3000, OR,
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-You can view the deployed site at [https://reactopenweather.netlify.app/](https://reactopenweather.netlify.app/).
+You can view the deployed site at [https://augustine-ok-weather-data.netlify.app/](https://augustine-ok-weather-data.netlify.app/).
 
 <!-- ## State
 
