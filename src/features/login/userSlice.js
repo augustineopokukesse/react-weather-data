@@ -18,6 +18,7 @@ export const userSlice = createSlice({
           state.user[data].password = action.payload.password;
         }
         
+        
       }
     }
   }

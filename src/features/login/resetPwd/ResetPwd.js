@@ -1,14 +1,49 @@
 import React, {useState} from "react";
 import './resetPwd.scss';
 import { Link } from "react-router-dom";
+import { resetPw } from "../userSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { selectUser } from "../userSlice";
 
 function ResetPwd() {
     const [email, setEmail] = useState('');
     const [pwd1, setPwd1] = useState('');
     const [pwd2, setPwd2] = useState('');
 
+    const dispatch = useDispatch();
+    const history = useHistory();
+    const userData = useSelector(selectUser);
+
+    let emailData = [];
+
+    for (let data=0; data < userData.length; data++) {
+        emailData = [...emailData, userData[data].email];
+      }
+
     const handleSubmit = e => {
         e.preventDefault();
+
+        if (!email || !email.includes("@") || !pwd1 || !pwd2) {
+            return;
+        } 
+
+        if (!emailData.includes(email)) {
+            alert("Enter correct Email");
+        }
+
+        if(!(pwd1 === pwd2)) {
+            alert("Password mismatch")
+        }
+
+        if(emailData.includes(email) && (pwd1 === pwd2)) {
+            dispatch(resetPw({
+                email: email,
+                password: pwd1
+            }));
+
+            history.push('/');
+        }
     }
 
     return (
