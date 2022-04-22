@@ -11,11 +11,19 @@ export const userSlice = createSlice({
     },
     logout: (state) => {
         state.user = null;
+    },
+    resetPw: (state, action) => {
+      for (let data=0; data < state.user.length; data++) {
+        if (action.payload.email === state.user[data].email) {
+          state.user[data].password = action.payload.password;
+        }
+        
+      }
     }
   }
 });
 
 export const selectUser = (state) => state.user.user;
-export const { login, logout } = userSlice.actions;
+export const { login, logout, resetPw } = userSlice.actions;
 
 export default userSlice.reducer;

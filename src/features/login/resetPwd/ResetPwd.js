@@ -3,8 +3,6 @@ import './resetPwd.scss';
 import { Link } from "react-router-dom";
 
 function ResetPwd() {
-    // const [firstname, setFirstname] = useState('');
-    // const [lastname, setLastname] = useState('');
     const [email, setEmail] = useState('');
     const [pwd1, setPwd1] = useState('');
     const [pwd2, setPwd2] = useState('');
@@ -18,7 +16,7 @@ function ResetPwd() {
           {/* <h1>Welcome! Please Sign </h1> */}
           
             <div className="top">
-                <p>Go back to
+                <p>Back to
                     <Link id='Links-signin' to='/'>Sign In</Link>   
                 </p> 
             </div>
