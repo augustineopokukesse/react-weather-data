@@ -122,6 +122,9 @@ $main-color: #00BFFF;
 .weatherData {
     width: 80%;
     margin: auto;
+    @include media ('<=phone'){
+        width: 95%;
+    }
     
     .dataContainer {
         @include media('<=tablet') {
@@ -132,14 +135,20 @@ $main-color: #00BFFF;
             display: block;
             
         }
+        @include media ('<=phone'){
+            width: 85%;
+        }
         .dataHeader {
             @include media('<=tablet') {
                 height: auto;
                 width: 80%;
                 margin: auto;
             }
+            @include media ('<=phone'){
+                width: 85%;
+            }
             .headerText {
-                @include media ('>phone', '<=530px') {
+                @include media ('<=530px') {
                     font-size: 23px;
                 }
             }
@@ -155,6 +164,9 @@ $main-color: #00BFFF;
             @include media ('>phone', '<=530px') {
                 width: 90%;
                 margin: auto;
+            }
+            @include media ('<=phone'){
+                width: 95%;
             }
         }
     }
