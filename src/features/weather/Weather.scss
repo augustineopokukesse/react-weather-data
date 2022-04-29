@@ -22,10 +22,21 @@ $main-color: #00BFFF;
             margin: 0px;
             padding-top: 20px;
         }
+        @include media ('<=phone') {
+            font-size: 35px;
+            margin: 0px;
+            padding-top: 25px;
+        }
+       
     }
     .subHeader {
         @include media ('>phone', '<=530px') {
             font-size: 25px;
+            padding: 20px;
+        }
+        @include media ('<=phone') {
+            font-size: 20px;
+            margin-top: 15px;
             padding: 20px;
         }
     }
@@ -38,6 +49,9 @@ $main-color: #00BFFF;
             justify-content: center;
             align-items: center;
             height: auto;
+        }
+        @include media ('<=phone') {
+            margin-top: 30px;
         }
         select{
             height: 2rem;
@@ -67,6 +81,11 @@ $main-color: #00BFFF;
                 display: block;
                 margin: 10px auto 0 auto;
                 width: 50%;
+            }
+            @include media ('<=phone') {
+                display: block;
+                margin: 10px auto 0 auto;
+                width: 70%;
             }      
         }
         #subsearch {
@@ -88,6 +107,12 @@ $main-color: #00BFFF;
                 // justify-content: center;
                 // align-items: center;
                 // height: auto;
+            }
+            @include media ('>phone', '<=530px') {
+                width: 25%;
+            }
+            @include media ('<=phone') {
+                width: 30%;
             } 
         }
     }
