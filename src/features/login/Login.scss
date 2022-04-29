@@ -1,3 +1,5 @@
+@import "../breakpoint.scss";
+
 $main-color: #00BFFF;
 
 .main-login {
@@ -6,6 +8,13 @@ $main-color: #00BFFF;
     overflow-x: hidden;
     background: linear-gradient(to right, rgb(207, 207, 207) 50%, $main-color 50%);
     align-items: center;
+    h1 {
+        color:#104050;
+        @include media('<=phone') {
+            width: 95%;
+            margin-top: 10%;
+        }
+    }
     .login-container {
         height: 75vh;
         width: 70%;
@@ -16,6 +25,11 @@ $main-color: #00BFFF;
         display: flex;
         justify-content: center;
         align-items: center;
+        @include media('<=phone') {
+            height: 55vh;
+            width: 95%;
+            
+        }
         .link{text-decoration: none;
             color:$main-color;
             transition: all 0.3s ease;
@@ -34,6 +48,14 @@ $main-color: #00BFFF;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            @include media('>tablet', '<=1000px') {
+                height: 80%;
+                width: 90%;
+            }
+            @include media('<=tablet') {
+                height: 100%;
+                width: 100%;
+            }
             input{
                 display: block;
                 border: none;
