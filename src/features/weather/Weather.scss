@@ -1,3 +1,5 @@
+@import "../breakpoint.scss";
+
 $main-color: #00BFFF;
 
 .weatherHead {
@@ -10,35 +12,162 @@ $main-color: #00BFFF;
     display: block;
     justify-content: center;
     align-items: center;
-    select{
-        height: 2rem;
-        width: 30%;
-        margin-right: 10px;
-        margin-top: 1.5rem;
-        padding: 0.2rem 1rem;
-        color: gray;
-        font-size: small;
-        transition: all 0.1s ease-in-out;
-        &:focus{
-            outline: none;
-            border: none;
-        }
-        &:hover{
-            outline: 0.5px solid $main-color;
-            box-shadow: 2px 2px 9px -2px $main-color;
-            }
+    @include media('<=tablet') {
+        height: 45vh;
+        width: 95%;
     }
-    #subsearch {
-        width: 10%;
-        background: $main-color;
-        color:white;
-        border:none;
-        cursor: pointer;
-        padding:0.5rem 1rem;
-        transition: all 0.2s ease;
-        &:hover{
-            box-shadow: 4px 3px 9px -1px gray;
-            transform: translateY(-0.5px);
+    .mainHeader {
+        @include media ('>phone', '<=530px') {
+            font-size: 40px;
+            margin: 0px;
+            padding-top: 20px;
+        }
+        @include media ('<=phone') {
+            font-size: 35px;
+            margin: 0px;
+            padding-top: 25px;
+        }
+       
+    }
+    .subHeader {
+        @include media ('>phone', '<=530px') {
+            font-size: 25px;
+            padding: 20px;
+        }
+        @include media ('<=phone') {
+            font-size: 20px;
+            margin-top: 15px;
+            padding: 20px;
+        }
+    }
+
+    form {
+        width: 95%;
+        margin: auto;
+        @include media('<=tablet') {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+        }
+        @include media ('<=phone') {
+            margin-top: 30px;
+        }
+        select{
+            height: 2rem;
+            width: 30%;
+            margin-right: 10px;
+            margin-top: 1.5rem;
+            padding: 0.2rem 1rem;
+            color: gray;
+            font-size: small;
+            transition: all 0.1s ease-in-out;
+            &:focus{
+                outline: none;
+                border: none;
+            }
+            &:hover{
+                outline: 0.5px solid $main-color;
+                box-shadow: 2px 2px 9px -2px $main-color;
+                }
+            @include media('<=tablet') {
+                width: 40%;
+                
+                // justify-content: center;
+                // align-items: center;
+                // height: auto;
+            }  
+            @include media ('>phone', '<=530px'){
+                display: block;
+                margin: 10px auto 0 auto;
+                width: 50%;
+            }
+            @include media ('<=phone') {
+                display: block;
+                margin: 10px auto 0 auto;
+                width: 70%;
+            }      
+        }
+        #subsearch {
+            width: 10%;
+            background: $main-color;
+            color:white;
+            border:none;
+            cursor: pointer;
+            padding:0.5rem 1rem;
+            transition: all 0.2s ease;
+            &:hover{
+                box-shadow: 4px 3px 9px -1px gray;
+                transform: translateY(-0.5px);
+            }
+            @include media('<=tablet') {
+                width: 20%;
+                // display: block;
+                margin-top: 20px;
+                // justify-content: center;
+                // align-items: center;
+                // height: auto;
+            }
+            @include media ('>phone', '<=530px') {
+                width: 25%;
+            }
+            @include media ('<=phone') {
+                width: 30%;
+            } 
+        }
+    }
+    
+    
+}
+.weatherData {
+    width: 80%;
+    margin: auto;
+    @include media ('<=phone'){
+        width: 95%;
+    }
+    
+    .dataContainer {
+        @include media('<=tablet') {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
+            display: block;
+            
+        }
+        @include media ('<=phone'){
+            width: 85%;
+        }
+        .dataHeader {
+            @include media('<=tablet') {
+                height: auto;
+                width: 80%;
+                margin: auto;
+            }
+            @include media ('<=phone'){
+                width: 85%;
+            }
+            .headerText {
+                @include media ('<=530px') {
+                    font-size: 23px;
+                }
+            }
+            
+            
+        }
+        .dataInfo {
+            @include media('<=tablet') {
+                height: auto;
+                width: 70%;
+                margin: auto;
+            }
+            @include media ('>phone', '<=530px') {
+                width: 90%;
+                margin: auto;
+            }
+            @include media ('<=phone'){
+                width: 95%;
+            }
         }
     }
     

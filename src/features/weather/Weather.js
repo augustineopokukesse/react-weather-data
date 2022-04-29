@@ -48,29 +48,29 @@ function Weather() {
     <div>
       <ContainerWrapper>
         <div className='weatherHead'>
-          <TitleWrapper>
+          <TitleWrapper className='mainHeader'>
             Weather App
-          </TitleWrapper>
-          <TextWrapper>
+          </TitleWrapper >
+          <TextWrapper className='subHeader'>
             Get the current weather situation around the world
           </TextWrapper>
           {/* Input */}
           
           <form onSubmit={handleSearch}>
-          <select onChange={e => setCountry(e.target.value)}>
-            <option value="" onSelect={e => setCountry(e.target.value)}>--Select Country--</option>
-            {Object.keys(countryObject).map(countryName => {
-              return <option>{countryName}</option>
-            })}  
-          </select>
-          <select value={city} onChange={e => setCity(e.target.value)}>
-            <option value="" onSelect={e => setCity(e.target.value)}>--Select City--</option>  
-            {!country ? "" : (
-              countryObject[country].map(cityName => {
-                return <option>{cityName}</option>
-              })
-            )}
-          </select>
+            <select onChange={e => setCountry(e.target.value)}>
+              <option value="" onSelect={e => setCountry(e.target.value)}>--Select Country--</option>
+              {Object.keys(countryObject).map(countryName => {
+                return <option>{countryName}</option>
+              })}  
+            </select>
+            <select value={city} onChange={e => setCity(e.target.value)}>
+              <option value="" onSelect={e => setCity(e.target.value)}>--Select City--</option>  
+              {!country ? "" : (
+                countryObject[country].map(cityName => {
+                  return <option>{cityName}</option>
+                })
+              )}
+            </select>
             {/* Button */}
             <button type="submit" id="subsearch">
               Search
@@ -78,7 +78,7 @@ function Weather() {
           </form>  
         </div>
         {/* Content goes here */}
-        <MainWrapper>
+        <MainWrapper className='weatherData'>
           {loading ? (
             <TitleWrapper>
               Loading please wait ...
@@ -88,35 +88,35 @@ function Weather() {
               {error?.message}
             </TitleWrapper>)
           : (Object.keys(weather).length === 0) ? "" :(
-            <SubContainer>
-            <BeforeData>
-              <TextWrapper style={{color: 'gray'}}>
-                {weather.name}, {weather.sys?.country} <br/>
-                Current Weather
-              </TextWrapper>
-            </BeforeData>
-            <DataWrapper>
-              <TempWrapper>
-                {`Temperature: ${Math.ceil(Number((weather.main.temp)- 273.15))}`}{" "}
-                <span class="text-yellow-500 text-4xl">°C</span>
-              </TempWrapper>
-              <CondWrapper>
-                  {`Condition: ${weather.weather[0].main}`}
-                </CondWrapper>{" "}
-              <IconWrapper
-                  src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-                  alt="/"
-              />
+            <SubContainer className='dataContainer'>
+              <BeforeData className='dataHeader'>
+                <TextWrapper style={{color: 'gray'}} className="headerText">
+                  {weather.name}, {weather.sys?.country} <br/>
+                  Current Weather
+                </TextWrapper>
+              </BeforeData>
+              <DataWrapper className='dataInfo'>
+                <TempWrapper>
+                  {`Temperature: ${Math.ceil(Number((weather.main.temp)- 273.15))}`}{" "}
+                  <span class="text-yellow-500 text-4xl">°C</span>
+                </TempWrapper>
+                <CondWrapper>
+                    {`Condition: ${weather.weather[0].main}`}
+                  </CondWrapper>{" "}
+                <IconWrapper
+                    src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+                    alt="/"
+                />
 
-              <DescriptionText>
-                The weather condition in {weather.name},{" "}
-                {weather.sys?.country} is described as :{" "}
-                {weather.weather[0].description} with a temperature of{" "}
-                {Math.ceil(Number((weather.main.temp)- 273.15))} °C and a humidity of{" "}
-                {weather.main.humidity}%.
-              </DescriptionText>
-                
-            </DataWrapper> 
+                <DescriptionText>
+                  The weather condition in {weather.name},{" "}
+                  {weather.sys?.country} is described as :{" "}
+                  {weather.weather[0].description} with a temperature of{" "}
+                  {Math.ceil(Number((weather.main.temp)- 273.15))} °C and a humidity of{" "}
+                  {weather.main.humidity}%.
+                </DescriptionText>
+                  
+              </DataWrapper> 
             </SubContainer>
           )}
         </MainWrapper>
