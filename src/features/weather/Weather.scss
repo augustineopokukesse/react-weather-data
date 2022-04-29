@@ -127,6 +127,12 @@ $main-color: #00BFFF;
     }
     
     .dataContainer {
+        box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
+        height: 45vh;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         @include media('<=tablet') {
             width: 80%;
             margin: auto;
