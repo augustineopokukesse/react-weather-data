@@ -113,12 +113,22 @@ $main-color: #00BFFF;
                 width: 80%;
                 margin: auto;
             }
+            .headerText {
+                @include media ('>phone', '<=530px') {
+                    font-size: 23px;
+                }
+            }
+            
             
         }
         .dataInfo {
             @include media('<=tablet') {
                 height: auto;
                 width: 70%;
+                margin: auto;
+            }
+            @include media ('>phone', '<=530px') {
+                width: 90%;
                 margin: auto;
             }
         }

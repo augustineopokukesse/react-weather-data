@@ -90,7 +90,7 @@ function Weather() {
           : (Object.keys(weather).length === 0) ? "" :(
             <SubContainer className='dataContainer'>
               <BeforeData className='dataHeader'>
-                <TextWrapper style={{color: 'gray'}}>
+                <TextWrapper style={{color: 'gray'}} className="headerText">
                   {weather.name}, {weather.sys?.country} <br/>
                   Current Weather
                 </TextWrapper>
