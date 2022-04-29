@@ -13,7 +13,7 @@ $main-color: #00BFFF;
     justify-content: center;
     align-items: center;
     @include media('<=tablet') {
-        height: 45vh;
+        height: 55vh;
         width: 95%;
     }
     .mainHeader {
@@ -80,7 +80,7 @@ $main-color: #00BFFF;
             @include media ('>phone', '<=530px'){
                 display: block;
                 margin: 10px auto 0 auto;
-                width: 50%;
+                width: 70%;
             }
             @include media ('<=phone') {
                 display: block;
@@ -128,11 +128,12 @@ $main-color: #00BFFF;
     
     .dataContainer {
         box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
-        height: 45vh;
+        height: auto;
         margin: auto;
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 20px;
         @include media('<=tablet') {
             width: 80%;
             margin: auto;
