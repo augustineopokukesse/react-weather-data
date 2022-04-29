@@ -25,6 +25,10 @@ $main-color: #00BFFF;
         display: flex;
         justify-content: center;
         align-items: center;
+        @include media('>phone', '<=400px') {
+            height: 55vh;
+            width: 90%;
+        }
         @include media('<=phone') {
             height: 55vh;
             width: 95%;
