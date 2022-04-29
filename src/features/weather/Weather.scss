@@ -16,6 +16,20 @@ $main-color: #00BFFF;
         height: 45vh;
         width: 95%;
     }
+    .mainHeader {
+        @include media ('>phone', '<=530px') {
+            font-size: 40px;
+            margin: 0px;
+            padding-top: 20px;
+        }
+    }
+    .subHeader {
+        @include media ('>phone', '<=530px') {
+            font-size: 25px;
+            padding: 20px;
+        }
+    }
+
     form {
         width: 95%;
         margin: auto;
@@ -44,12 +58,16 @@ $main-color: #00BFFF;
                 }
             @include media('<=tablet') {
                 width: 40%;
-                // display: block;
-                // margin: auto;
+                
                 // justify-content: center;
                 // align-items: center;
                 // height: auto;
-            }        
+            }  
+            @include media ('>phone', '<=530px'){
+                display: block;
+                margin: 10px auto 0 auto;
+                width: 50%;
+            }      
         }
         #subsearch {
             width: 10%;

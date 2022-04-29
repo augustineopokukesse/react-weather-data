@@ -48,10 +48,10 @@ function Weather() {
     <div>
       <ContainerWrapper>
         <div className='weatherHead'>
-          <TitleWrapper>
+          <TitleWrapper className='mainHeader'>
             Weather App
-          </TitleWrapper>
-          <TextWrapper>
+          </TitleWrapper >
+          <TextWrapper className='subHeader'>
             Get the current weather situation around the world
           </TextWrapper>
           {/* Input */}
