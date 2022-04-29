@@ -78,7 +78,7 @@ function Weather() {
           </form>  
         </div>
         {/* Content goes here */}
-        <MainWrapper>
+        <MainWrapper className='weatherData'>
           {loading ? (
             <TitleWrapper>
               Loading please wait ...
@@ -88,35 +88,35 @@ function Weather() {
               {error?.message}
             </TitleWrapper>)
           : (Object.keys(weather).length === 0) ? "" :(
-            <SubContainer>
-            <BeforeData>
-              <TextWrapper style={{color: 'gray'}}>
-                {weather.name}, {weather.sys?.country} <br/>
-                Current Weather
-              </TextWrapper>
-            </BeforeData>
-            <DataWrapper>
-              <TempWrapper>
-                {`Temperature: ${Math.ceil(Number((weather.main.temp)- 273.15))}`}{" "}
-                <span class="text-yellow-500 text-4xl">°C</span>
-              </TempWrapper>
-              <CondWrapper>
-                  {`Condition: ${weather.weather[0].main}`}
-                </CondWrapper>{" "}
-              <IconWrapper
-                  src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-                  alt="/"
-              />
+            <SubContainer className='dataContainer'>
+              <BeforeData className='dataHeader'>
+                <TextWrapper style={{color: 'gray'}}>
+                  {weather.name}, {weather.sys?.country} <br/>
+                  Current Weather
+                </TextWrapper>
+              </BeforeData>
+              <DataWrapper className='dataInfo'>
+                <TempWrapper>
+                  {`Temperature: ${Math.ceil(Number((weather.main.temp)- 273.15))}`}{" "}
+                  <span class="text-yellow-500 text-4xl">°C</span>
+                </TempWrapper>
+                <CondWrapper>
+                    {`Condition: ${weather.weather[0].main}`}
+                  </CondWrapper>{" "}
+                <IconWrapper
+                    src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+                    alt="/"
+                />
 
-              <DescriptionText>
-                The weather condition in {weather.name},{" "}
-                {weather.sys?.country} is described as :{" "}
-                {weather.weather[0].description} with a temperature of{" "}
-                {Math.ceil(Number((weather.main.temp)- 273.15))} °C and a humidity of{" "}
-                {weather.main.humidity}%.
-              </DescriptionText>
-                
-            </DataWrapper> 
+                <DescriptionText>
+                  The weather condition in {weather.name},{" "}
+                  {weather.sys?.country} is described as :{" "}
+                  {weather.weather[0].description} with a temperature of{" "}
+                  {Math.ceil(Number((weather.main.temp)- 273.15))} °C and a humidity of{" "}
+                  {weather.main.humidity}%.
+                </DescriptionText>
+                  
+              </DataWrapper> 
             </SubContainer>
           )}
         </MainWrapper>

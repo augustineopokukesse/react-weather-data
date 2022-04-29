@@ -76,3 +76,34 @@ $main-color: #00BFFF;
     
     
 }
+.weatherData {
+    width: 80%;
+    margin: auto;
+    
+    .dataContainer {
+        @include media('<=tablet') {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
+            display: block;
+            
+        }
+        .dataHeader {
+            @include media('<=tablet') {
+                height: auto;
+                width: 80%;
+                margin: auto;
+            }
+            
+        }
+        .dataInfo {
+            @include media('<=tablet') {
+                height: auto;
+                width: 70%;
+                margin: auto;
+            }
+        }
+    }
+    
+}
