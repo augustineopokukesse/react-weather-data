@@ -1,3 +1,5 @@
+@import "../breakpoint.scss";
+
 $main-color: #00BFFF;
 
 .weatherHead {
@@ -10,36 +12,67 @@ $main-color: #00BFFF;
     display: block;
     justify-content: center;
     align-items: center;
-    select{
-        height: 2rem;
-        width: 30%;
-        margin-right: 10px;
-        margin-top: 1.5rem;
-        padding: 0.2rem 1rem;
-        color: gray;
-        font-size: small;
-        transition: all 0.1s ease-in-out;
-        &:focus{
-            outline: none;
-            border: none;
+    @include media('<=tablet') {
+        height: 45vh;
+        width: 95%;
+    }
+    form {
+        width: 95%;
+        margin: auto;
+        @include media('<=tablet') {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            height: auto;
         }
-        &:hover{
-            outline: 0.5px solid $main-color;
-            box-shadow: 2px 2px 9px -2px $main-color;
+        select{
+            height: 2rem;
+            width: 30%;
+            margin-right: 10px;
+            margin-top: 1.5rem;
+            padding: 0.2rem 1rem;
+            color: gray;
+            font-size: small;
+            transition: all 0.1s ease-in-out;
+            &:focus{
+                outline: none;
+                border: none;
             }
-    }
-    #subsearch {
-        width: 10%;
-        background: $main-color;
-        color:white;
-        border:none;
-        cursor: pointer;
-        padding:0.5rem 1rem;
-        transition: all 0.2s ease;
-        &:hover{
-            box-shadow: 4px 3px 9px -1px gray;
-            transform: translateY(-0.5px);
+            &:hover{
+                outline: 0.5px solid $main-color;
+                box-shadow: 2px 2px 9px -2px $main-color;
+                }
+            @include media('<=tablet') {
+                width: 40%;
+                // display: block;
+                // margin: auto;
+                // justify-content: center;
+                // align-items: center;
+                // height: auto;
+            }        
+        }
+        #subsearch {
+            width: 10%;
+            background: $main-color;
+            color:white;
+            border:none;
+            cursor: pointer;
+            padding:0.5rem 1rem;
+            transition: all 0.2s ease;
+            &:hover{
+                box-shadow: 4px 3px 9px -1px gray;
+                transform: translateY(-0.5px);
+            }
+            @include media('<=tablet') {
+                width: 20%;
+                // display: block;
+                margin-top: 20px;
+                // justify-content: center;
+                // align-items: center;
+                // height: auto;
+            } 
         }
     }
+    
     
 }

@@ -57,20 +57,20 @@ function Weather() {
           {/* Input */}
           
           <form onSubmit={handleSearch}>
-          <select onChange={e => setCountry(e.target.value)}>
-            <option value="" onSelect={e => setCountry(e.target.value)}>--Select Country--</option>
-            {Object.keys(countryObject).map(countryName => {
-              return <option>{countryName}</option>
-            })}  
-          </select>
-          <select value={city} onChange={e => setCity(e.target.value)}>
-            <option value="" onSelect={e => setCity(e.target.value)}>--Select City--</option>  
-            {!country ? "" : (
-              countryObject[country].map(cityName => {
-                return <option>{cityName}</option>
-              })
-            )}
-          </select>
+            <select onChange={e => setCountry(e.target.value)}>
+              <option value="" onSelect={e => setCountry(e.target.value)}>--Select Country--</option>
+              {Object.keys(countryObject).map(countryName => {
+                return <option>{countryName}</option>
+              })}  
+            </select>
+            <select value={city} onChange={e => setCity(e.target.value)}>
+              <option value="" onSelect={e => setCity(e.target.value)}>--Select City--</option>  
+              {!country ? "" : (
+                countryObject[country].map(cityName => {
+                  return <option>{cityName}</option>
+                })
+              )}
+            </select>
             {/* Button */}
             <button type="submit" id="subsearch">
               Search
