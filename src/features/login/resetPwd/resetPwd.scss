@@ -1,3 +1,5 @@
+@import "../../breakpoint.scss";
+
 $secondry-color:#26343D;
 
 .main-signup{
@@ -26,13 +28,22 @@ $secondry-color:#26343D;
             top: 7%;
             height: 100%;
             width:100%;
-            .signup-section{
+            .resetpwd-section{
                 height: 60%;
                 width: 50%;
                 margin:2rem auto;
                 padding-top:1rem;
                 box-shadow: 0rem 0rem 0.5rem 0.1rem #48ea98;
                 border-radius: 0.5rem;
+                @include media('<=tablet') {
+                    width: 70%;
+                }
+                @include media('<550px') {
+                    width: 85%;
+                }
+                @include media('<=phone') {
+                    width: 95%;
+                }
                 .input-group{
                     width: 100%;
                     position: relative;

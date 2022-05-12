@@ -56,7 +56,7 @@ function ResetPwd() {
                 </p> 
             </div>
             <div className="content-body">
-                <div className="signup-section">
+                <div className="resetpwd-section">
                     <h1>Reset Password</h1>
                     <form onSubmit={handleSubmit}>
                         {/* <div className="input-group">
