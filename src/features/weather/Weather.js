@@ -52,7 +52,7 @@ function Weather() {
             Weather App
           </TitleWrapper >
           <TextWrapper className='subHeader'>
-            Get the current weather situation around the world
+            Get the current weather situation at our locations
           </TextWrapper>
           {/* Input */}
           
