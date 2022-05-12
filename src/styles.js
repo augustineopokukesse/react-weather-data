@@ -92,5 +92,5 @@ export const DescriptionText = styled.p`
   color: black;
   position: relative;
   top: -40px;
-  padding: 0 10px;
+  padding: 10px 10px 0 10px;
 `;
