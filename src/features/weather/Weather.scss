@@ -167,6 +167,7 @@ $main-color: #00BFFF;
                 height: auto;
                 width: 70%;
                 margin: auto;
+                padding-top: 10px;
             }
             @include media ('>phone', '<=530px') {
                 width: 90%;
