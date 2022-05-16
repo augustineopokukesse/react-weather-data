@@ -50,7 +50,7 @@ function Login() {
     }
     return (
         <div className="main-login">
-          <h1>Welcome! Please login</h1>
+          <h1>Welcome, Please Login!</h1>
           <div className="login-container">
             <div className="login-form">
               <form onSubmit={handleSubmit}>
