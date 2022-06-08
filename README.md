@@ -65,8 +65,6 @@ Project is: complete -->
 
 ## Contributors
 - Augustine Opoku-Kesse
-- Precious Amudzi
-- Godfred Ofori
 
 <!-- ## Questions
 
