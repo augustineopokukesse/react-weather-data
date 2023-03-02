@@ -8,12 +8,12 @@ export const MainWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 80vh;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   
 `;
 
 export const SubContainer = styled.div`
-  height: 100%;
+  height: 90%;
   width: 70%;
   margin: 0 auto;
   display: flex;
@@ -36,7 +36,8 @@ export const DataWrapper = styled.div`
   height: 95%;
   background: white;
   border-radius: 15px 15px 0 0;
-  
+  justify-content: space-between;
+  align-items: center;
 `;
 
 
@@ -67,6 +68,8 @@ export const TextWrapper = styled.h2`
   color: white;
   //text-align: left;
   font-family: 'Montserrat';
+  // position: relative;
+  // top: 30px;
 `;
 
 export const ImageWrapper = styled.img`
@@ -79,18 +82,18 @@ export const ImageWrapper = styled.img`
 export const TempWrapper = styled.div`
   font-size: 20px;
   color: black;
-  position: relative;
-  padding-left: 0px; 
-  left: -40px;
-  top: -20px;
+  // position: relative;
+  // padding-left: 0px; 
+  // left: -40px;
+  // top: -20px;
 `;
 export const CondWrapper = styled.h2`
   font-size: 20px;
   color: gray;
-  position: relative;
-  top: -10px;
-  right: 120px;
-  padding-left: 0px;
+  // position: relative;
+  // top: -10px;
+  // right: 120px;
+  // padding-left: 0px;
 `;
 
 export const IconWrapper = styled.img`
@@ -105,9 +108,11 @@ export const IconWrapper = styled.img`
 `;
 
 export const DescriptionText = styled.p`
-  font-size: 16px;
+  font-size: 18px;
   color: black;
   position: relative;
-  top: -40px;
-  padding: 10px 10px 0 10px;
+  top: -60px;
+  padding: 10px 30px 0 30px;
+  font-family: 'Montserrat';
+  font-weight: 300;
 `;

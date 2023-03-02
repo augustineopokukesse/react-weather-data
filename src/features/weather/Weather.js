@@ -97,11 +97,10 @@ function Weather() {
                 </TextWrapper>
               </BeforeData> */}
               <DataWrapper className='dataInfo'>
-                <TextWrapper style={{color: 'gray'}} className="headerText">
-                  Current Weather<br/>
-                  {weather.name}, {weather.sys?.country} 
-                  
-                </TextWrapper>
+                <div className="headerText">
+                  <span className='topTxt1'>Current</span> <span className='topTxt2w'>Weather</span><br/>
+                  <span className='topTxt2'>{weather.name}</span>, <span className='topTxt1'>{weather.sys?.country}</span> 
+                </div>
                 <div className='tempSection'>
                   <TempWrapper>
                     <span className='tempStyle'>{Math.ceil(Number((weather.main.temp)- 273.15))}{" "}</span>

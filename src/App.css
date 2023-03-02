@@ -12,7 +12,7 @@
   transition: all 0.2s ease;
   text-decoration: none;
   position: relative;
-  bottom: 20px;
+  bottom: 0px;
 }
 
 #logout:hover{
