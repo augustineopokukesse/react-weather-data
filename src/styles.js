@@ -1,16 +1,27 @@
 import styled from "@emotion/styled";
 
 export const MainWrapper = styled.div`  
-   margin-bottom: 100px;
-   margin-top: 50px;
-   justify-content: center;
-   align-items: center;
+  width: 75%;
+  margin: auto;
+  height: 80vh;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin-bottom: 20px;
+  
 `;
 
 export const SubContainer = styled.div`
-  max-width: 800px;
+  height: 100%;
+  width: 70%;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 20px;
+  padding-bottom: 0px;
+  border-radius: 7px;
 `;
 
 export const BeforeData = styled.div`
@@ -19,12 +30,12 @@ export const BeforeData = styled.div`
 `;  
 
 export const DataWrapper = styled.div`
-  display: block;
-  width: 300px;
-  height: 300px;
-  background: #f0f8ff;
-  border-radius: 15px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  height: 95%;
+  background: white;
+  border-radius: 15px 15px 0 0;
   
 `;
 
@@ -52,8 +63,10 @@ export const TitleWrapper = styled.h1`
 `;
 
 export const TextWrapper = styled.h2`
-  font-size: 30px;
+  font-size: 20px;
   color: white;
+  //text-align: left;
+  font-family: 'Montserrat';
 `;
 
 export const ImageWrapper = styled.img`
@@ -63,25 +76,29 @@ export const ImageWrapper = styled.img`
   border-radius: 15px 15px 0 0;
 `;
 
-export const TempWrapper = styled.h2`
+export const TempWrapper = styled.div`
   font-size: 20px;
-  color: gray;
+  color: black;
   position: relative;
   padding-left: 0px; 
+  left: -40px;
+  top: -20px;
 `;
 export const CondWrapper = styled.h2`
   font-size: 20px;
   color: gray;
   position: relative;
   top: -10px;
+  right: 120px;
   padding-left: 0px;
 `;
 
 export const IconWrapper = styled.img`
-  position: relative;
-  width: 120px;
-  top: -20px;
-  left: 0px;
+  
+  width: 5vw;
+  height: auto;
+  
+  object-fit: cover;
   border-radius: 50%;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
   background: #C2C2CB;

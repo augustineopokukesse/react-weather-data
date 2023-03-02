@@ -3,17 +3,17 @@
 $main-color: #00BFFF;
 
 .weatherHead {
-    height: 45vh;
-    width: 80%;
+    height: 15vh;
+    width: 70%;
     background: linear-gradient(to right bottom, $main-color, rgba(236,236,236,0.4));
-    border-radius: 1rem;
+    border-radius: 5px;
     margin: 2rem auto;
     box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
     @include media('<=tablet') {
-        height: 55vh;
+        height: 15vh;
         width: 95%;
     }
     .mainHeader {
@@ -44,6 +44,9 @@ $main-color: #00BFFF;
     form {
         width: 95%;
         margin: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         @include media('<=tablet') {
             display: block;
             justify-content: center;
@@ -57,7 +60,7 @@ $main-color: #00BFFF;
             height: 2rem;
             width: 30%;
             margin-right: 10px;
-            margin-top: 1.5rem;
+            //margin-top: 1.5rem;
             padding: 0.2rem 1rem;
             color: gray;
             font-size: small;
@@ -89,7 +92,7 @@ $main-color: #00BFFF;
             }      
         }
         #subsearch {
-            width: 10%;
+            width: 10vw;
             background: $main-color;
             color:white;
             border:none;
@@ -120,20 +123,15 @@ $main-color: #00BFFF;
     
 }
 .weatherData {
-    width: 80%;
-    margin: auto;
+    
     @include media ('<=phone'){
         width: 95%;
     }
     
     .dataContainer {
         box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
-        height: auto;
-        margin: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
+        background-color: #3dc8f7;
+        //opacity: .4;
         @include media('<=tablet') {
             width: 80%;
             margin: auto;
@@ -163,6 +161,7 @@ $main-color: #00BFFF;
             
         }
         .dataInfo {
+            //background-color: rgb(217, 237, 245);
             @include media('<=tablet') {
                 height: auto;
                 width: 70%;
@@ -175,6 +174,28 @@ $main-color: #00BFFF;
             }
             @include media ('<=phone'){
                 width: 95%;
+                margin: 0 auto;
+                //border: 1px solid black;
+            }
+            .tempSection{
+                width: 95%;
+            }
+            .tempStyle{
+                font-size: 20vh;
+                font-family: 'Roboto';
+                font-weight: 100;
+            }
+            .degreeStyle{
+                position: relative;
+                left: -35px;
+                top: -85px;
+            }
+            .logCond{
+                display: flex;
+                flex-direction: column-reverse;
+                position: relative;
+                top: -150px;
+                right: -200px;
             }
         }
     }

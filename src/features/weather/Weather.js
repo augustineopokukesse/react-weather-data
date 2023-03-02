@@ -47,13 +47,14 @@ function Weather() {
   return (
     <div>
       <ContainerWrapper>
-        <div className='weatherHead'>
-          <TitleWrapper className='mainHeader'>
-            Weather App
-          </TitleWrapper >
           <TextWrapper className='subHeader'>
             Get the current weather situation at our locations
           </TextWrapper>
+        <div className='weatherHead'>
+          {/* <TitleWrapper className='mainHeader'>
+            Weather App
+          </TitleWrapper > */}
+          
           {/* Input */}
           
           <form onSubmit={handleSearch}>
@@ -80,33 +81,43 @@ function Weather() {
         {/* Content goes here */}
         <MainWrapper className='weatherData'>
           {loading ? (
-            <TitleWrapper>
+            <SubContainer>
               Loading please wait ...
-            </TitleWrapper>) 
+            </SubContainer>) 
           : error ? (
             <TitleWrapper>
               {error?.message}
             </TitleWrapper>)
           : (Object.keys(weather).length === 0) ? "" :(
             <SubContainer className='dataContainer'>
-              <BeforeData className='dataHeader'>
+              {/* <BeforeData className='dataHeader'>
                 <TextWrapper style={{color: 'gray'}} className="headerText">
                   {weather.name}, {weather.sys?.country} <br/>
                   Current Weather
                 </TextWrapper>
-              </BeforeData>
+              </BeforeData> */}
               <DataWrapper className='dataInfo'>
-                <TempWrapper>
-                  {`Temperature: ${Math.ceil(Number((weather.main.temp)- 273.15))}`}{" "}
-                  <span class="text-yellow-500 text-4xl">°C</span>
-                </TempWrapper>
-                <CondWrapper>
-                    {`Condition: ${weather.weather[0].main}`}
-                  </CondWrapper>{" "}
-                <IconWrapper
-                    src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-                    alt="/"
-                />
+                <TextWrapper style={{color: 'gray'}} className="headerText">
+                  Current Weather<br/>
+                  {weather.name}, {weather.sys?.country} 
+                  
+                </TextWrapper>
+                <div className='tempSection'>
+                  <TempWrapper>
+                    <span className='tempStyle'>{Math.ceil(Number((weather.main.temp)- 273.15))}{" "}</span>
+                    <span className='degreeStyle'>°C</span>
+                  </TempWrapper>
+                  <div className='logCond'>
+                    <CondWrapper>
+                      {weather.weather[0].main}
+                    </CondWrapper>{" "}
+                    <IconWrapper
+                        src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+                        alt="/"
+
+                    />
+                  </div>
+                </div>
 
                 <DescriptionText>
                   The weather condition in {weather.name},{" "}
