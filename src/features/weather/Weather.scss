@@ -15,12 +15,12 @@ $main-color: #00BFFF;
     @include media('<=desktop'){
         font-size: 30px !important;
     }
-    @include media ('>phone', '<=530px') {
-        font-size: 25px;
+    @include media ('<=530px') {
+        font-size: 25px !important;
         padding: 20px;
     }
-    @include media ('<=phone') {
-        font-size: 20px;
+    @include media ('<=415px') {
+        font-size: 20px !important;
         margin-top: 15px;
         padding: 20px;
     }
@@ -40,7 +40,10 @@ $main-color: #00BFFF;
         width: 95%;
     }
     @include media ('<=530px') {
-        min-height: 20vh;
+        min-height: 25vh;
+    }
+    @include media ('<=phone') {
+        min-height: 30vh;
         
     }
     .mainHeader {
@@ -81,13 +84,14 @@ $main-color: #00BFFF;
         }
         @include media ('<=530px') {
             flex-direction: column;
+            padding: 20px;
             
         }
         @include media ('<=phone') {
             margin-top: 20px;
         }
         select{
-            height: 4vh;
+            height: auto;
             width: 30%;
             margin-right: 10px;
             //margin-top: 1.5rem;
@@ -115,7 +119,8 @@ $main-color: #00BFFF;
             }
             @include media('<=tablet') {
                 width: 40%;
-                height: 4vh;
+                height: auto;
+                padding: 0.4rem 1rem;
                 
                 // justify-content: center;
                 // align-items: center;
@@ -160,7 +165,7 @@ $main-color: #00BFFF;
             }
             @include media('<=tablet') {
                 width: 20%;
-                height: 4vh;
+                height: auto;
                 // display: block;
                 //margin-top: 20px;
                 // justify-content: center;
@@ -188,7 +193,10 @@ $main-color: #00BFFF;
         width: 95%;
     }
     @include media ('<=phone'){
-        width: 100%;
+        width: 90% !important;
+        height: 60vh !important;
+        //margin-left: 50px !important;
+        //background-color: #00BFFF;
     }
     .loading{
         box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
@@ -220,6 +228,7 @@ $main-color: #00BFFF;
         }
         @include media ('<=phone'){
             width: 100%;
+            height: 100%;
         }
         .dataInfo {
             @include media ('<=laptop'){
@@ -227,7 +236,7 @@ $main-color: #00BFFF;
                 // position: relative;
                 // top: 80px;
             }
-            @include media ('>laptop', '<=1240px'){
+            @include media ('>laptop'){
                 width: 60%;
             }
             @include media ('>=laptopL', '<=4KScreens'){
@@ -277,6 +286,12 @@ $main-color: #00BFFF;
                     @include media ('>=4KScreens'){
                         font-size: 40px;
                     }
+                    @include media ('<=425px'){
+                        font-size: 16px;
+                    }
+                    @include media ('<=375px'){
+                        font-size: 14px;
+                    }
                    
                 }
                 .topTxt2w{
@@ -294,7 +309,12 @@ $main-color: #00BFFF;
                     @include media ('>=4KScreens'){
                         font-size: 60px;
                     }
-                    
+                    @include media ('<=425px'){
+                        font-size: 20px;
+                    }
+                    @include media ('<=375px'){
+                        font-size: 16px;
+                    }
                 }
                 .topTxt2{
                     font-family: 'Montserrat';
@@ -310,7 +330,12 @@ $main-color: #00BFFF;
                     @include media ('>=4KScreens'){
                         font-size: 60px;
                     }
-                    
+                    @include media ('<=425px'){
+                        font-size: 20px;
+                    }
+                    @include media ('<=375px'){
+                        font-size: 16px;
+                    }
                 }
             }
             .tempSection{
@@ -326,6 +351,20 @@ $main-color: #00BFFF;
                 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                 padding-top: 20px;
                 padding-bottom: 20px;
+                @include media('<=tablet'){
+                    width: 80%;
+                    
+                }
+                @include media('<=490px'){
+                    height: 25%;
+                }
+                @include media('<=425px'){
+                    width: 90%;
+                    height: 25%;
+                }
+                @include media ('<=375px'){
+                    height: 20%;
+                }
                 @include media ('>=laptop'){
                     top: -40px;
                     width: 85%;
@@ -340,14 +379,67 @@ $main-color: #00BFFF;
                 
             }
             .tempStyle{
-                font-size: 20vh;
+                font-size: 12vw;
                 font-family: 'Roboto';
                 font-weight: 100;
+                @include media('<=tablet'){
+                    font-size: 20vw;
+                }
+                @include media('<=425px'){
+                    font-size: 25vw;
+                }
             }
             .degreeStyle{
                 position: relative;
                 left: -35px;
                 top: -85px;
+                @include media ('>=4KScreens'){
+                    font-size: 2vw;
+                    left: -105px;
+                    top: -165px;
+                }
+                @include media ('>=laptopL'){
+                    font-size: 2vw;
+                    left: -70px;
+                    top: -100px;
+                }
+                
+                @include media ('>=laptop'){
+                    left: -35px;
+                    top: -70px;
+                }
+                @include media ('>=1200px'){
+                    left: -45px;
+                    top: -90px;
+                }
+                @include media ('<laptop'){
+                    left: -35px;
+                    top: -70px;
+                }
+                @include media('<=tablet'){
+                    left: -45px;
+                    top: -90px;
+                }
+                @include media('<=640px'){
+                    left: -38px;
+                    top: -75px;
+                }
+                @include media('<=570px'){
+                    left: -35px;
+                    top: -65px;
+                }
+                @include media('<=490px'){
+                    left: -30px;
+                    top: -55px;
+                }
+                @include media('<=425px'){
+                    left: -30px;
+                    top: -55px;
+                }
+                @include media('<=phone'){
+                    left: -25px;
+                    top: -50px;
+                }
             }
             .logCond{
                 display: flex;
@@ -355,6 +447,67 @@ $main-color: #00BFFF;
                 position: relative;
                 top: 10px;
                 right: 10px;
+                .condition{
+                    @include media ('<laptop'){
+                        position: relative;
+                        right: 7px;
+                    }
+                    @include media ('<=tablet'){
+                        position: relative;
+                        right: 3px;
+                    }
+                    @include media('<=640px'){
+                        right: 9px;
+                    }
+                    @include media('<=490px'){
+                        right: 0px;
+                    }
+                    @include media ('<=460px'){
+                        font-size: 16px;
+                        right: -6px;
+                    }
+                    @include media ('<=420px'){
+                        right: -4px;
+                    }
+                    @include media ('>=laptop'){
+                        position: relative;
+                        right: 7px;
+                    }
+                    @include media ('>=1200px'){
+                        position: relative;
+                        right: 4px;
+                    }
+                    @include media ('>=laptopL'){
+                        position: relative;
+                        right: 0px;
+                    }
+                    @include media ('>=4KScreens'){
+                        font-size: 2vw;
+                        position: relative;
+                        right: 20px;
+                    }
+                    
+                    
+                }
+                .icon{
+                    @include media ('<=tablet'){
+                        width: 8vw;
+                    }
+                    @include media('<=490px'){
+                        position: relative;
+                        right: -10px;
+                        width: 10vw;
+                    }
+                    @include media('<=425px'){
+                        width: 12vw;
+                        position: relative;
+                        right: -5px;
+                    }
+                    @include media('<=phone'){
+                        right: -10px;
+                    }
+                }
+                
             }
         }
         .descText {

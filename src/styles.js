@@ -7,7 +7,6 @@ export const MainWrapper = styled.div`
   margin-top: 50px;
   justify-content: center;
   align-items: center;
-  height: 80vh;
   margin-bottom: 40px;
   
 `;

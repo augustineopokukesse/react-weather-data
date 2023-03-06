@@ -109,13 +109,13 @@ function Weather() {
                     <span className='degreeStyle'>°C</span>
                   </TempWrapper>
                   <div className='logCond'>
-                    <CondWrapper>
+                    <CondWrapper className='condition'>
                       {weather.weather[0].main}
                     </CondWrapper>{" "}
                     <IconWrapper
                         src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
                         alt="/"
-
+                      className='icon'
                     />
                   </div>
                 </div>
