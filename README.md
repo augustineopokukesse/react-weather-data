@@ -1,5 +1,5 @@
 # REACT WEATHER DATA
-> This application allows the user of the system to get weather data for Germany, Rwanda, and Ghana. It uses the open Weather MAP API to fetch weather conditions for the selected country or city.
+> This application allows the user of the system to get current weather information for Germany, Rwanda, and Ghana. It uses the open Weather MAP API to fetch weather conditions for the selected country or city.
 
 ## Features
 The App consists of a
