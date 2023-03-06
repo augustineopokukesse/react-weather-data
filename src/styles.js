@@ -64,8 +64,12 @@ export const TitleWrapper = styled.h1`
 `;
 
 export const TextWrapper = styled.h2`
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
   font-size: 20px;
-  color: white;
+  color: #00BFFF;
+  //background-color: black;
   //text-align: left;
   font-family: 'Montserrat';
   // position: relative;

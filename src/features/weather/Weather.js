@@ -7,6 +7,8 @@ import { DataWrapper, TitleWrapper, TextWrapper, MainWrapper,
         ContainerWrapper, IconWrapper, CondWrapper,
         TempWrapper, BeforeData, SubContainer, DescriptionText } from "../../styles";
 
+import Loading from './Loading';
+
 function Weather() {
   const [country, setCountry] = useState("");
   const [city, setCity]= useState("");
@@ -47,9 +49,9 @@ function Weather() {
   return (
     <div>
       <ContainerWrapper>
-          <TextWrapper className='subHeader'>
-            Get the current weather situation at our locations
-          </TextWrapper>
+        <TextWrapper className='mainHeader'>
+          Get the current weather situation at our locations
+        </TextWrapper>
         <div className='weatherHead'>
           {/* <TitleWrapper className='mainHeader'>
             Weather App
@@ -81,8 +83,8 @@ function Weather() {
         {/* Content goes here */}
         <MainWrapper className='weatherData'>
           {loading ? (
-            <SubContainer>
-              Loading please wait ...
+            <SubContainer  className='loading'>
+              <Loading />
             </SubContainer>) 
           : error ? (
             <TitleWrapper>
@@ -118,7 +120,7 @@ function Weather() {
                   </div>
                 </div>
 
-                <DescriptionText>
+                <DescriptionText className='descText'>
                   The weather condition in {weather.name},{" "}
                   {weather.sys?.country} is described as :{" "}
                   {weather.weather[0].description} with a temperature of{" "}

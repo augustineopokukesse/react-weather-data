@@ -2,8 +2,31 @@
 
 $main-color: #00BFFF;
 
+.mainHeader {
+    //font-size: 20px;
+    @include media('<=4KScreens'){
+        font-size: 60px !important; 
+        padding: 20px;
+        //color: #00BFFF;
+    }
+    @include media('<=LGdesktop'){
+        font-size: 40px !important;
+    }
+    @include media('<=desktop'){
+        font-size: 30px !important;
+    }
+    @include media ('>phone', '<=530px') {
+        font-size: 25px;
+        padding: 20px;
+    }
+    @include media ('<=phone') {
+        font-size: 20px;
+        margin-top: 15px;
+        padding: 20px;
+    }
+}
 .weatherHead {
-    height: 15vh;
+    height: 12vh;
     width: 70%;
     background: linear-gradient(to right bottom, $main-color, rgba(236,236,236,0.4));
     border-radius: 5px;
@@ -13,8 +36,12 @@ $main-color: #00BFFF;
     justify-content: center;
     align-items: center;
     @include media('<=tablet') {
-        height: 15vh;
+        height: 10vh;
         width: 95%;
+    }
+    @include media ('<=530px') {
+        min-height: 20vh;
+        
     }
     .mainHeader {
         @include media ('>phone', '<=530px') {
@@ -29,17 +56,7 @@ $main-color: #00BFFF;
         }
        
     }
-    .subHeader {
-        @include media ('>phone', '<=530px') {
-            font-size: 25px;
-            padding: 20px;
-        }
-        @include media ('<=phone') {
-            font-size: 20px;
-            margin-top: 15px;
-            padding: 20px;
-        }
-    }
+    
 
     form {
         width: 95%;
@@ -47,23 +64,36 @@ $main-color: #00BFFF;
         display: flex;
         justify-content: center;
         align-items: center;
+        @include media('<=4KScreens') {
+            //height: 15vh;
+            width: 95%;
+        }
+        @include media('<=LGdesktop'){
+            //height: 12vh;
+            width: 95%;
+        }
         @include media('<=tablet') {
-            display: block;
+            display: flex;
             justify-content: center;
             align-items: center;
             height: auto;
+            width: 90%;
+        }
+        @include media ('<=530px') {
+            flex-direction: column;
+            
         }
         @include media ('<=phone') {
-            margin-top: 30px;
+            margin-top: 20px;
         }
         select{
-            height: 2rem;
+            height: 4vh;
             width: 30%;
             margin-right: 10px;
             //margin-top: 1.5rem;
             padding: 0.2rem 1rem;
             color: gray;
-            font-size: small;
+            font-size: 20px !important;
             transition: all 0.1s ease-in-out;
             &:focus{
                 outline: none;
@@ -72,9 +102,20 @@ $main-color: #00BFFF;
             &:hover{
                 outline: 0.5px solid $main-color;
                 box-shadow: 2px 2px 9px -2px $main-color;
-                }
+            }
+            @include media('<=4KScreens') {
+                height: 5vh;
+                width: 35%;
+                margin-right: 20px;
+                font-size: 20px;
+            }
+            @include media('<=LGdesktop'){
+                height: 5vh;
+                width: 40%;
+            }
             @include media('<=tablet') {
                 width: 40%;
+                height: 4vh;
                 
                 // justify-content: center;
                 // align-items: center;
@@ -83,16 +124,22 @@ $main-color: #00BFFF;
             @include media ('>phone', '<=530px'){
                 display: block;
                 margin: 10px auto 0 auto;
-                width: 70%;
+                width: 85%;
             }
+            @include media ('<=400px') {
+                display: block;
+                margin: 10px auto 0 auto;
+                width: 90%;
+            }  
             @include media ('<=phone') {
                 display: block;
                 margin: 10px auto 0 auto;
-                width: 70%;
+                width: 90%;
             }      
         }
         #subsearch {
             width: 10vw;
+            height: 4vh;
             background: $main-color;
             color:white;
             border:none;
@@ -103,19 +150,30 @@ $main-color: #00BFFF;
                 box-shadow: 4px 3px 9px -1px gray;
                 transform: translateY(-0.5px);
             }
+            @include media('<=4KScreens'){
+                height: 5vh;
+                font-size: 20px;
+            }
+            @include media('<=LGdesktop'){
+                height: 5vh;
+                font-size: 20px;
+            }
             @include media('<=tablet') {
                 width: 20%;
+                height: 4vh;
                 // display: block;
-                margin-top: 20px;
+                //margin-top: 20px;
                 // justify-content: center;
                 // align-items: center;
                 // height: auto;
             }
-            @include media ('>phone', '<=530px') {
+            @include media ('<=530px') {
                 width: 25%;
+                margin-top: 18px;
             }
             @include media ('<=phone') {
                 width: 30%;
+                padding-right: 80px;
             } 
         }
     }
@@ -123,71 +181,137 @@ $main-color: #00BFFF;
     
 }
 .weatherData {
-    
-    @include media ('<=phone'){
+    @include media ('<=530px'){
+        width: 92%;
+    }
+    @include media ('<=450px'){
         width: 95%;
     }
-    
+    @include media ('<=phone'){
+        width: 100%;
+    }
+    .loading{
+        box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
+        background-color: #3dc8f7;
+        align-items: center;
+    }
     .dataContainer {
         box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
         background-color: #3dc8f7;
         //opacity: .4;
+        @include media ('<=1440px'){
+            //height: 50vh;
+        }
         @include media('<=tablet') {
             width: 80%;
-            margin: auto;
-            padding: 20px;
+            //margin: auto;
+            //padding: 20px;
             box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
-            display: block;
+            //justify-content: flex-end;
             
         }
-        @include media ('<=phone'){
+        @include media ('<=530px'){
             width: 85%;
+            padding: 0%;
+            background-color: white;
         }
-        .headerText {
-            font-size: 16px;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            @include media ('<=530px') {
-                font-size: 23px;
-            }
-            .topTxt1{
-                font-family: 'Roboto';
-                font-weight: 100;
-                color: rgb(65, 62, 62);
-                
-            }
-            .topTxt2w{
-                font-family: 'Montserrat';
-                font-weight: 400;
-                font-style: italic;
-                color: rgb(116, 106, 106);
-                font-size: 25px;
-                // position: relative;
-                // top: 20px;
-            }
-            .topTxt2{
-                font-family: 'Montserrat';
-                font-weight: 400;
-                color: rgb(116, 106, 106);
-                font-size: 30px;
-            }
+        @include media ('<=450px'){
+            width: 95%;
+        }
+        @include media ('<=phone'){
+            width: 100%;
         }
         .dataInfo {
-            //background-color: rgb(217, 237, 245);
-            @include media('<=tablet') {
-                height: auto;
+            @include media ('<=laptop'){
                 width: 70%;
-                margin: auto;
-                padding-top: 10px;
+                // position: relative;
+                // top: 80px;
             }
-            @include media ('>phone', '<=530px') {
+            @include media ('>laptop', '<=1240px'){
+                width: 60%;
+            }
+            @include media ('>=laptopL', '<=4KScreens'){
+                width: 60%;
+                // position: relative;
+                // top: 80px;
+            }
+            @include media('<=tablet') {
+                //height: 90%;
                 width: 90%;
-                margin: auto;
+                //margin: auto;
+                //justify-content: flex-end;
+                //padding-top: 10px;
+            }
+            @include media ('<=530px') {
+                width: 100%;
+                height: 100%;
+                //margin: auto;
             }
             @include media ('<=phone'){
-                width: 95%;
+                width: 100%;
                 margin: 0 auto;
                 //border: 1px solid black;
+            }
+            .headerText {
+                font-size: 16px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                @include media ('>=laptop', '<=4KScreens') {
+                    width: 100%;
+                    height: auto;
+                    padding: 40px 0px;
+                }
+                @include media ('<=530px') {
+                    font-size: 23px;
+                }
+                .topTxt1{
+                    font-family: 'Roboto';
+                    font-weight: 100;
+                    color: rgb(65, 62, 62);
+                    // @include media ('>=laptop'){
+                    //     font-size: 2.5vw;
+                    // }
+                    @include media ('>=laptopL'){
+                        font-size: 30px;
+                    }
+                    @include media ('>=4KScreens'){
+                        font-size: 40px;
+                    }
+                   
+                }
+                .topTxt2w{
+                    font-family: 'Montserrat';
+                    font-weight: 400;
+                    font-style: italic;
+                    color: rgb(116, 106, 106);
+                    font-size: 25px;
+                    // @include media ('>=laptop'){
+                    //     font-size: 4vw;
+                    // }
+                    @include media ('>=laptopL'){
+                        font-size: 50px;
+                    }
+                    @include media ('>=4KScreens'){
+                        font-size: 60px;
+                    }
+                    
+                }
+                .topTxt2{
+                    font-family: 'Montserrat';
+                    font-weight: 400;
+                    color: rgb(116, 106, 106);
+                    font-size: 30px;
+                    // @include media ('>=laptop'){
+                    //     font-size: 2vw;
+                    // }
+                    @include media ('>=laptopL'){
+                        font-size: 50px;
+                    }
+                    @include media ('>=4KScreens'){
+                        font-size: 60px;
+                    }
+                    
+                }
             }
             .tempSection{
                 width: 90%;
@@ -202,7 +326,18 @@ $main-color: #00BFFF;
                 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                 padding-top: 20px;
                 padding-bottom: 20px;
-                //border: .4px solid black;
+                @include media ('>=laptop'){
+                    top: -40px;
+                    width: 85%;
+                    height: 25%;
+                }
+                @include media ('>=laptopL'){
+                    top: -50px;
+                }
+                @include media ('>=4KScreens'){
+                    top: -100px;
+                }
+                
             }
             .tempStyle{
                 font-size: 20vh;
@@ -222,6 +357,26 @@ $main-color: #00BFFF;
                 right: 10px;
             }
         }
+        .descText {
+            // @include media ('>=laptop'){
+            //     top: -60px;
+            //     font-size: 27px;
+            //     padding: 0 30px;
+            // }
+            @include media ('>=laptopL'){
+                top: -50px;
+                font-size: 30px;
+                padding: 0 30px;
+            }
+            @include media ('>=4KScreens'){
+                top: -150px;
+                font-size: 60px;
+                padding: 0 60px;
+            }
+            
+            
+        }
+        
     }
     
 }
