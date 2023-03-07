@@ -3,11 +3,9 @@
 $main-color: #00BFFF;
 
 .mainHeader {
-    //font-size: 20px;
     @include media('<=4KScreens'){
         font-size: 60px !important; 
         padding: 20px;
-        //color: #00BFFF;
     }
     @include media('<=LGdesktop'){
         font-size: 40px !important;
@@ -68,11 +66,9 @@ $main-color: #00BFFF;
         justify-content: center;
         align-items: center;
         @include media('<=4KScreens') {
-            //height: 15vh;
             width: 95%;
         }
         @include media('<=LGdesktop'){
-            //height: 12vh;
             width: 95%;
         }
         @include media('<=tablet') {
@@ -94,7 +90,6 @@ $main-color: #00BFFF;
             height: auto;
             width: 30%;
             margin-right: 10px;
-            //margin-top: 1.5rem;
             padding: 0.2rem 1rem;
             color: gray;
             font-size: 20px !important;
@@ -121,10 +116,6 @@ $main-color: #00BFFF;
                 width: 40%;
                 height: auto;
                 padding: 0.4rem 1rem;
-                
-                // justify-content: center;
-                // align-items: center;
-                // height: auto;
             }  
             @include media ('>phone', '<=530px'){
                 display: block;
@@ -166,11 +157,6 @@ $main-color: #00BFFF;
             @include media('<=tablet') {
                 width: 20%;
                 height: auto;
-                // display: block;
-                //margin-top: 20px;
-                // justify-content: center;
-                // align-items: center;
-                // height: auto;
             }
             @include media ('<=530px') {
                 width: 25%;
@@ -195,8 +181,6 @@ $main-color: #00BFFF;
     @include media ('<=phone'){
         width: 90% !important;
         height: 60vh !important;
-        //margin-left: 50px !important;
-        //background-color: #00BFFF;
     }
     .loading{
         box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
@@ -206,16 +190,11 @@ $main-color: #00BFFF;
     .dataContainer {
         box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
         background-color: #3dc8f7;
-        //opacity: .4;
         @include media ('<=1440px'){
-            //height: 50vh;
         }
         @include media('<=tablet') {
             width: 80%;
-            //margin: auto;
-            //padding: 20px;
             box-shadow: 0.5rem 0.5rem 2rem -1rem rgb(58, 57, 57);
-            //justify-content: flex-end;
             
         }
         @include media ('<=530px'){
@@ -233,33 +212,23 @@ $main-color: #00BFFF;
         .dataInfo {
             @include media ('<=laptop'){
                 width: 70%;
-                // position: relative;
-                // top: 80px;
             }
             @include media ('>laptop'){
                 width: 60%;
             }
             @include media ('>=laptopL', '<=4KScreens'){
                 width: 60%;
-                // position: relative;
-                // top: 80px;
             }
             @include media('<=tablet') {
-                //height: 90%;
                 width: 90%;
-                //margin: auto;
-                //justify-content: flex-end;
-                //padding-top: 10px;
             }
             @include media ('<=530px') {
                 width: 100%;
                 height: 100%;
-                //margin: auto;
             }
             @include media ('<=phone'){
                 width: 100%;
                 margin: 0 auto;
-                //border: 1px solid black;
             }
             .headerText {
                 font-size: 16px;
@@ -277,9 +246,6 @@ $main-color: #00BFFF;
                     font-family: 'Roboto';
                     font-weight: 100;
                     color: rgb(65, 62, 62);
-                    // @include media ('>=laptop'){
-                    //     font-size: 2.5vw;
-                    // }
                     @include media ('>=laptopL'){
                         font-size: 30px;
                     }
@@ -300,9 +266,6 @@ $main-color: #00BFFF;
                     font-style: italic;
                     color: rgb(116, 106, 106);
                     font-size: 25px;
-                    // @include media ('>=laptop'){
-                    //     font-size: 4vw;
-                    // }
                     @include media ('>=laptopL'){
                         font-size: 50px;
                     }
@@ -321,9 +284,6 @@ $main-color: #00BFFF;
                     font-weight: 400;
                     color: rgb(116, 106, 106);
                     font-size: 30px;
-                    // @include media ('>=laptop'){
-                    //     font-size: 2vw;
-                    // }
                     @include media ('>=laptopL'){
                         font-size: 50px;
                     }
@@ -511,11 +471,6 @@ $main-color: #00BFFF;
             }
         }
         .descText {
-            // @include media ('>=laptop'){
-            //     top: -60px;
-            //     font-size: 27px;
-            //     padding: 0 30px;
-            // }
             @include media ('>=laptopL'){
                 top: -50px;
                 font-size: 30px;

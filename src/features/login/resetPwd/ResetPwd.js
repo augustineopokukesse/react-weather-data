@@ -48,8 +48,6 @@ function ResetPwd() {
 
     return (
         <div className="main-signup">
-          {/* <h1>Welcome! Please Sign </h1> */}
-          
             <div className="top">
                 <p>Back to
                     <Link id='Links-signin' to='/'>Sign In</Link>   
@@ -59,16 +57,6 @@ function ResetPwd() {
                 <div className="resetpwd-section">
                     <h1>Reset Password</h1>
                     <form onSubmit={handleSubmit}>
-                        {/* <div className="input-group">
-                            <h5> First Name</h5>
-                            <input type="text" name="Fname"  id="fname" value={firstname}
-                            onChange={e => setFirstname(e.target.value)}/>
-                        </div>
-                        <div className="input-group">
-                            <h5> Last Name</h5>
-                            <input type="text" name="lname" id="lname" value={lastname}
-                            onChange={e => setLastname(e.target.value)}/>
-                        </div> */}
                         <div className="input-group">
                             <h5> Email</h5>
                             <input type="Email" name="email"  id="email1" value={email}

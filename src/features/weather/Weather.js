@@ -5,7 +5,7 @@ import CountryCity from "../../data/all-countries-cities-object.json";
 import { fetchWeatherAction, selectWeatherState } from './weatherSlice';
 import { DataWrapper, TitleWrapper, TextWrapper, MainWrapper,
         ContainerWrapper, IconWrapper, CondWrapper,
-        TempWrapper, BeforeData, SubContainer, DescriptionText } from "../../styles";
+        TempWrapper, SubContainer, DescriptionText } from "../../styles";
 
 import Loading from './Loading';
 
@@ -31,7 +31,6 @@ function Weather() {
   console.log(weather);
   console.log(loading);
   console.log(error);
-  //console.log(REACT_APP_OPEN_WEATHER_KEY2);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -53,12 +52,6 @@ function Weather() {
           Get the current weather situation at our locations
         </TextWrapper>
         <div className='weatherHead'>
-          {/* <TitleWrapper className='mainHeader'>
-            Weather App
-          </TitleWrapper > */}
-          
-          {/* Input */}
-          
           <form onSubmit={handleSearch}>
             <select onChange={e => setCountry(e.target.value)}>
               <option value="" onSelect={e => setCountry(e.target.value)}>--Select Country--</option>
@@ -74,7 +67,6 @@ function Weather() {
                 })
               )}
             </select>
-            {/* Button */}
             <button type="submit" id="subsearch">
               Search
             </button>
@@ -92,12 +84,6 @@ function Weather() {
             </TitleWrapper>)
           : (Object.keys(weather).length === 0) ? "" :(
             <SubContainer className='dataContainer'>
-              {/* <BeforeData className='dataHeader'>
-                <TextWrapper style={{color: 'gray'}} className="headerText">
-                  {weather.name}, {weather.sys?.country} <br/>
-                  Current Weather
-                </TextWrapper>
-              </BeforeData> */}
               <DataWrapper className='dataInfo'>
                 <div className="headerText">
                   <span className='topTxt1'>Current</span> <span className='topTxt2w'>Weather</span><br/>
