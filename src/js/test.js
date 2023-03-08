@@ -1,0 +1,3 @@
+const OPEN_WEATHER_KEY = '136157ec5728379e0f02436a251b5aa7';
+
+export default OPEN_WEATHER_KEY;
