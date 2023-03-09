@@ -1,7 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+//import OPEN_WEATHER_KEY from "../../js/apikey";
 
 const apiKey = process.env.REACT_APP_OPEN_WEATHER_KEY;
+//const apiKey = OPEN_WEATHER_KEY;
+console.log(apiKey);
 export const fetchWeatherAction = createAsyncThunk(
     'weather/fetch', 
     async (payload, { rejectWithValue, getState, dispatch }) => {

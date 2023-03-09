@@ -4,7 +4,8 @@
 
 #log-out {
   width: 80%;
-  background: #00BFFF;
+  background: #127abb;
+  text-transform: uppercase;
   color:white;
   border:none;
   cursor: pointer;

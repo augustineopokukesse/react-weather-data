@@ -67,7 +67,7 @@ export const TextWrapper = styled.h2`
   height: auto;
   margin: 0 auto;
   font-size: 20px;
-  color: #00BFFF;
+  color: #127abb;
   //background-color: black;
   //text-align: left;
   font-family: 'Montserrat';
@@ -112,7 +112,7 @@ export const IconWrapper = styled.img`
 
 export const DescriptionText = styled.p`
   font-size: 18px;
-  color: black;
+  color: #4B4B4B;
   position: relative;
   top: -60px;
   padding: 10px 30px 0 30px;
